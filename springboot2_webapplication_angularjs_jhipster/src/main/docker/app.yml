@@ -1,0 +1,19 @@
+version: '2'
+services:
+    springboot2_webapplication_angularjs_jhipster-app:
+        image: springboot2_webapplication_angularjs_jhipster
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod,swagger
+            - SPRING_DATASOURCE_URL=jdbc:mysql://springboot2_webapplication_angularjs_jhipster-mysql:3306/springboot2_webapplication_angularjs_jhipster?useUnicode=true&characterEncoding=utf8&useSSL=false
+            - JHIPSTER_SLEEP=10 # gives time for the database to boot before the application
+            - SPRING_DATA_ELASTICSEARCH_CLUSTER_NODES=springboot2_webapplication_angularjs_jhipster-elasticsearch:9300
+        ports:
+            - 8080:8080
+    springboot2_webapplication_angularjs_jhipster-mysql:
+        extends:
+            file: mysql.yml
+            service: springboot2_webapplication_angularjs_jhipster-mysql
+    springboot2_webapplication_angularjs_jhipster-elasticsearch:
+        extends:
+            file: elasticsearch.yml
+            service: springboot2_webapplication_angularjs_jhipster-elasticsearch

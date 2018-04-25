@@ -19,7 +19,7 @@ def remote_download():
     return train_path, test_path
 
 def local_download():
-    # Retourne les chemins des fichiers csv contenus dans le répertoire datasets du filesystem
+    # Retourne la localisation des fichiers csv contenus dans le répertoire datasets du filesystem
     parent = os.path.dirname(os.getcwd())
     return parent+LOCAL_TRAIN_URL, parent+LOCAL_TEST_URL
 

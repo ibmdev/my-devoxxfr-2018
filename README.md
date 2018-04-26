@@ -49,11 +49,11 @@ Getting started : https://www.tensorflow.org/get_started/premade_estimators
 
 ## The Tensorflow programming stack
 
-![picture](my_first_tensorflow\images/tensorflow_programming_environment.png)
+![picture](my_first_tensorflow/images/tensorflow_programming_environment.png)
 
 ## The Deep Neural Network classifier model
 
-![picture](my_first_tensorflow\images/full_network.png)
+![picture](my_first_tensorflow/images/full_network.png)
 
 ## Entraîner un modèle
 

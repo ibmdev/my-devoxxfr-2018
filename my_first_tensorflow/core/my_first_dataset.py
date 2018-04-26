@@ -17,6 +17,8 @@ SPECIES = ['Setosa', 'Versicolor', 'Virginica']
 
 # ignore warning : CPU does not support AVX
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+# logging verbosity
+tf.logging.set_verbosity(tf.logging.ERROR)
 
 
 def remote_download():

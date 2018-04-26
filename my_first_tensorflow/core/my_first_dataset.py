@@ -1,6 +1,10 @@
+# import Pandas library
 import pandas as pd
+# import TensorFlow library
 import tensorflow as tf
+# import os library
 import os
+
 
 TRAIN_URL = "http://download.tensorflow.org/data/iris_training.csv"
 TEST_URL = "http://download.tensorflow.org/data/iris_test.csv"
@@ -10,6 +14,9 @@ LOCAL_TEST_URL = "\\datasets\\iris_test.csv"
 
 CSV_COLUMN_NAMES = ['SepalLength', 'SepalWidth','PetalLength', 'PetalWidth', 'Species']
 SPECIES = ['Setosa', 'Versicolor', 'Virginica']
+
+# ignore warning : CPU does not support AVX
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 
 def remote_download():
@@ -31,6 +38,15 @@ def load_data(y_name='Species'):
     test = pd.read_csv(test_path, names=CSV_COLUMN_NAMES, header=0)
     test_x, test_y = test, test.pop(y_name)
     return (train_x, train_y), (test_x, test_y)
+
+def train_input_fn(features, labels, batch_size):
+    # Convertit les entrées en DataSets
+    dataset = tf.data.Dataset.from_tensor_slices((dict(features), labels))
+    # Mélanger(Shuffle), répéter (repeat) et batcher (batch) les exemples
+    dataset = dataset.shuffle(1000).repeat().batch(batch_size)
+    
+    return dataset
+
 
 
 

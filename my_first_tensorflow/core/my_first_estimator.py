@@ -1,9 +1,7 @@
-# import TensorFlow library
-import tensorflow as tf
-# import Dataset module
-import my_first_dataset
-# import argparse library
 import argparse
+import tensorflow as tf
+import my_first_dataset
+
 
 # Parser pour les arguments
 parser = argparse.ArgumentParser()

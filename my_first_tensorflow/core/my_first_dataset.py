@@ -1,9 +1,6 @@
-# import Pandas library
-import pandas as pd
-# import TensorFlow library
-import tensorflow as tf
-# import os library
 import os
+import pandas as pd
+import tensorflow as tf
 
 
 TRAIN_URL = "http://download.tensorflow.org/data/iris_training.csv"
